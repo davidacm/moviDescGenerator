@@ -1,5 +1,6 @@
 {
   "name": "movidescGenerator",
+  "homepage": "https://github.com/davidacm/moviDescGenerator",
   "version": "0.1.0",
   "private": true,
   "scripts": {

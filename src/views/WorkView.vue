@@ -215,7 +215,7 @@ export default {
       let reader = new FileReader();
       reader.readAsText(f, "UTF-8");
       reader.onload = (e) => {
-        for (let k of parseSubs(t)) this.insertCue(k);
+        for (let k of parseSubs(e.target.result)) this.insertCue(k);
       };
       reader.onerror = (e) => {
         console.error(e);
