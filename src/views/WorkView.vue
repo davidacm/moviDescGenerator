@@ -36,7 +36,7 @@
           <b-row>
             <b-col>
               <h1>video player</h1>
-              <p v-if="useAriaLive && !descPlayer.paused" aria-live="assertive">
+              <p v-if="useAriaLive" aria-live="assertive">
                 {{ textDesc }}
               </p>
               <vue-plyr>
@@ -365,7 +365,8 @@ export default {
         this.setMediaTime(this.curCue.timestamp);
         this.$refs.videocontrol.play();
         this.cancelSpeak();
-        this.speak(this.curCue.text);
+        if (this.useTts) this.speak(this.curCue.text);
+        if (this.useAriaLive) this.textDesc = this.curCue.text;
       });
     },
     togglePlayWithDesc() {
